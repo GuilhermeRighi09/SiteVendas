@@ -6,6 +6,7 @@
     --text-color: #333;
     --light-gray: #f9f9f9;
     --white: #fff;
+    --whatsapp-green: #25D366;
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Roboto', sans-serif;
 }
@@ -42,7 +43,7 @@ header {
 .nav-links a:hover { color: var(--primary-color); }
 
 .btn-cta-small {
-    background: #25D366; /* Verde Whatsapp */
+    background: var(--whatsapp-green);
     color: var(--white);
     padding: 8px 20px;
     border-radius: 5px;
@@ -75,6 +76,8 @@ header {
     padding: 12px 30px;
     border-radius: 5px;
     font-weight: 700;
+    border: none;
+    cursor: pointer;
 }
 .btn-secondary {
     background: transparent;
@@ -87,13 +90,36 @@ header {
 .btn-primary:hover { background: var(--secondary-color); }
 .btn-secondary:hover { background: var(--white); color: var(--primary-color); }
 
+/* --- ATUALIZADO: Botões dos Planos (Pílula) --- */
+.btn-outline {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+    
+    /* Formato Pílula */
+    padding: 10px 24px;
+    border-radius: 50px;
+    width: auto;
+    
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-block;
+    
+    /* Centralização Flex */
+    margin-top: auto; 
+    align-self: center;
+    
+    transition: 0.3s;
+}
+.btn-outline:hover { background: var(--primary-color); color: var(--white); }
+
 /* Sections Geral */
 .section-padding { padding: 80px 0; }
 .section-gray { background: var(--light-gray); }
 .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: var(--primary-color); }
 .section-title-left { font-size: 2rem; margin-bottom: 20px; color: var(--primary-color); }
 
-/* Vantagens */
+/* Vantagens (Cards Simples) */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -115,6 +141,15 @@ header {
 .about-text { flex: 1; }
 .about-image { flex: 1; text-align: center; }
 
+/* --- ATUALIZADO: Botão específico da seção Sobre Mim --- */
+.about-text .btn-primary {
+    border-radius: 50px;       /* Formato Redondo */
+    width: auto;               /* Tamanho justo ao texto */
+    display: inline-block;     
+    padding: 12px 35px;        /* Espaçamento interno */
+    margin-top: 20px;          /* Espaço do texto acima */
+}
+
 .profile-img {
     width: 250px;
     height: 250px;
@@ -125,133 +160,191 @@ header {
     margin: 0 auto;
 }
 
-/* Planos */
-.pricing-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-.price-card {
+/* Pricing / Planos */
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    align-items: stretch; 
+}
+
+.plan-card {
     background: var(--white);
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 40px;
-    width: 320px; /* Levemente mais largo */
-    text-align: center;
+    border-radius: 15px;
+    padding: 25px;
+    width: 100%;
+    max-width: 340px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    position: relative;
+    border: 1px solid #eee;
     display: flex;
     flex-direction: column;
+    height: auto; 
 }
-.price-card.featured {
+
+.plan-card:hover { transform: translateY(-5px); }
+
+.plan-card.popular {
     border: 2px solid var(--primary-color);
-    transform: scale(1.05);
-    position: relative;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 2;
+    background: #fdfdfd; 
+    box-shadow: 0 15px 30px rgba(0,86,179,0.15);
 }
+
 .badge {
     background: var(--accent-color);
     color: #000;
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
     padding: 5px 15px;
     border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 700;
+    font-size: 0.8rem;
+    font-weight: bold;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
 }
-.price { font-size: 2.5rem; font-weight: 700; color: var(--primary-color); margin: 10px 0; }
-.price span { font-size: 1rem; color: #666; font-weight: 400; }
-.price-card ul { text-align: left; margin-bottom: 30px; flex-grow: 1; }
-.price-card ul li { margin-bottom: 12px; font-size: 0.95rem;}
-.price-card ul li i { margin-right: 10px; color: var(--primary-color); width: 20px; text-align: center; }
 
-.btn-outline {
-    border: 2px solid var(--primary-color);
+.plan-card h3 { text-align: center; margin-top: 0; color: #333; font-size: 1.4rem; }
+
+.price {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
     color: var(--primary-color);
-    padding: 10px 25px;
-    border-radius: 5px;
-    font-weight: 700;
-    display: block;
+    margin: 10px 0;
 }
-.btn-outline:hover { background: var(--primary-color); color: var(--white); }
-.disclaimer { text-align: center; font-size: 0.9rem; color: #666; margin-top: 30px; }
+.price span { font-size: 0.9rem; font-weight: normal; color: #777; }
+
+.plan-desc { text-align: center; color: #666; font-size: 0.9rem; margin-bottom: 20px; }
+
+/* Lista de Recursos */
+ul.features { list-style: none; padding: 0; margin-bottom: 25px; flex-grow: 1; }
+ul.features li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f4f4f4;
+    font-size: 0.9rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+ul.features li::before {
+    content: "\f00c"; /* FontAwesome check */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--whatsapp-green);
+    margin-right: 8px;
+}
+ul.features li.disabled { text-decoration: line-through; opacity: 0.5; }
+ul.features li.disabled::before { content: "\f00d"; color: #ccc; }
+
+.disclaimer { text-align: center; font-size: 0.85rem; color: #888; margin-top: 30px; width: 100%; }
+
+/* --- CALCULADORA (Compactada) --- */
+.calculator-form { 
+    text-align: left; 
+    margin-bottom: 15px; 
+    flex-grow: 1; /* Ocupa o espaço disponível para alinhar o botão no fundo */
+}
+
+/* Reduzimos o padding para a calculadora caber melhor na altura dos outros */
+.calc-group { 
+    margin-bottom: 10px; 
+    padding-bottom: 5px; 
+    border-bottom: 1px dashed #ddd; 
+}
+.calc-group.no-border { border-bottom: none; }
+
+.calc-group label { display: block; font-weight: 600; font-size: 0.85rem; margin-bottom: 2px; }
+.calc-group small { display: block; color: #888; font-size: 0.75rem; margin-bottom: 3px; }
+.fixed-price { font-weight: bold; color: #555; font-size: 0.9rem; }
+
+/* Inputs de Quantidade */
+.qty-control { display: flex; gap: 5px; }
+.qty-btn {
+    background: #eee; border: none; width: 25px; height: 25px; border-radius: 5px; cursor: pointer; font-weight: bold;
+}
+.qty-input {
+    width: 35px; height: 25px; text-align: center; border: 1px solid #ddd; border-radius: 4px; background: white;
+}
+
+select { width: 100%; padding: 5px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.9rem; }
+
+.checkbox-item { margin-bottom: 5px; font-size: 0.85rem; display: flex; align-items: center; }
+.checkbox-item input { margin-right: 8px; }
+
+.total-display {
+    background: #f0f8ff;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 15px 0;
+    border: 1px solid #cfe2ff;
+}
+.total-display h4 { margin: 2px 0 0; font-size: 1.6rem; color: var(--primary-color); }
 
 /* Footer */
 footer { background: #222; color: var(--white); padding: 50px 0 20px; text-align: center; }
+
+/* Botão Whatsapp (Pílula) */
 .btn-whatsapp {
     display: inline-block;
-    background: #25D366;
+    background: var(--whatsapp-green);
     color: var(--white);
-    font-size: 1.2rem;
-    padding: 10px 25px;
+    font-size: 1rem;
+    padding: 10px 24px; 
     border-radius: 50px;
-    margin: 20px 0;
     font-weight: 700;
+    width: auto;
+    margin-top: auto; 
+    align-self: center;
+    white-space: nowrap; 
 }
+
+.btn-whatsapp:hover { background: #1ebc57; }
 .footer-copy { border-top: 1px solid #444; margin-top: 30px; padding-top: 20px; font-size: 0.9rem; color: #aaa; }
 
-/* -------------------- ESTILOS DO CARROSSEL -------------------- */
+/* Carrossel Styles */
 .carousel-container {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    background: #fff;
+    position: relative; max-width: 800px; margin: 0 auto; overflow: hidden;
+    border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); background: #fff;
 }
 .carousel-slide-wrapper { overflow: hidden; }
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-}
+.carousel-track { display: flex; transition: transform 0.5s ease-in-out; width: 100%; }
 .carousel-slide { min-width: 100%; position: relative; }
 .carousel-slide img {
-    width: 100%;
-    height: 400px; /* Altura fixa no PC */
-    object-fit: cover; /* Garante que a imagem preencha sem distorcer */
-    object-position: top center; /* Foca no topo da imagem */
-    display: block;
+    width: 100%; height: 400px; object-fit: cover; object-position: top center; display: block;
 }
 .slide-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 20px;
-    text-align: left;
+    position: absolute; bottom: 0; left: 0; width: 100%;
+    background: rgba(0, 0, 0, 0.8); color: #fff; padding: 20px; text-align: left;
 }
 .slide-content h3 { margin-bottom: 5px; color: var(--accent-color); font-size: 1.2rem; }
 .slide-content p { font-size: 0.95rem; margin: 0; }
 .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    z-index: 10;
-    font-size: 1.5rem;
-    border-radius: 50%;
-    transition: 0.3s;
+    position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5);
+    color: #fff; border: none; padding: 10px 15px; cursor: pointer; z-index: 10; font-size: 1.5rem;
+    border-radius: 50%; transition: 0.3s;
 }
 .carousel-btn:hover { background: var(--primary-color); }
 .prev-btn { left: 10px; }
 .next-btn { right: 10px; }
 .carousel-indicators { display: flex; justify-content: center; gap: 10px; margin-top: 15px; }
 .indicator {
-    width: 12px;
-    height: 12px;
-    background: #ccc;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
+    width: 12px; height: 12px; background: #ccc; border-radius: 50%; border: none; cursor: pointer; transition: 0.3s;
 }
 .indicator.active { background: var(--primary-color); transform: scale(1.2); }
 
 /* Mobile */
+@media (max-width: 900px) {
+    .pricing-container { flex-direction: column; align-items: center; }
+    .plan-card.popular { order: -1; margin-bottom: 20px; }
+    .plan-card { max-width: 100%; }
+}
+
 @media (max-width: 768px) {
     .nav-links {
         position: absolute; right: 0px; height: 92vh; top: 70px;
@@ -264,10 +357,8 @@ footer { background: #222; color: var(--white); padding: 50px 0 20px; text-align
     .btn-cta-small { display: none; }
     .hero h1 { font-size: 2rem; }
     .about-container { flex-direction: column; }
-    .price-card.featured { transform: scale(1); }
     .profile-img { width: 200px; height: 200px; }
     
-    /* Ajuste Carrossel Mobile */
     .carousel-slide img { height: 250px; }
     .slide-content h3 { font-size: 1rem; }
     .slide-content p { font-size: 0.8rem; }
