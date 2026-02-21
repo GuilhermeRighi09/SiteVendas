@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Criação de Sites, Landing Pages e Social Media para Microempresas em Piracicaba.">
+    <title>Guilherme.Dev | Sites & Marketing Digital em Piracicaba</title>
+
+    <link rel="stylesheet" href="/SiteVendas-main/assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+   <header id="navbar">
+    <div class="container nav-container">
+        
+        <div class="logo">
+            <img src="../SiteVendas-main/assets/img/LogoGD.png" alt="Logo Guilherme.Dev">
+            <div class="logo-text">Guilherme<span>.Dev</span></div>
+        </div>
+        
+        <nav class="header-nav">
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#vantagens">Vantagens</a></li>
+                <li><a href="#portfolio">Projetos</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+        </nav>
+        
+        <div class="nav-actions">
+            <a href="#contato" class="btn-cta-small">WhatsApp</a>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+
+    </div>
+</header>
+
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <h1>Sua empresa precisa dominar o Google e as Redes Sociais.</h1>
+            <p>Desenvolvo sites rápidos e gerencio suas redes sociais com posts de alta qualidade para atrair clientes em Piracicaba e região.</p>
+            <div class="hero-buttons">
+                <a href="#servicos" class="btn-primary">Ver Nossos Serviços</a>
+                <a href="#portfolio" class="btn-secondary">Ver Projetos</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="vantagens" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Por que trabalhar comigo?</h2>
+            <div class="cards-grid">
+                
+                <div class="card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Velocidade e Qualidade</h3>
+                    <p>Sites que abrem instantaneamente e designs de posts de alta qualidade que prendem a atenção do seu cliente.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Foco em Conversão</h3>
+                    <p>Tudo o que crio, desde uma página até um Reel, tem um objetivo claro: fazer o cliente entrar em contato com você.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Transparência Total</h3>
+                    <p>Sem surpresas no final do mês. Você escolhe exatamente o que quer e vê o preço na hora em nossas calculadoras.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section-gray section-padding">
+        <div class="container">
+            <h2 class="section-title">Meus Projetos Recentes</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-slide-wrapper">
+                    <div class="carousel-track" id="track">
+                        <div class="carousel-slide">
+                            <img src="../SiteVendas-main/assets/img/fotositepc.PNG" alt="Landing Page Advocacia Dra. Stephanie Real">
+                            <div class="slide-content">
+                                 <h3>Projeto Destaque: Advocacia e Consultoria</h3>
+                                <p>Interface inaugural com design minimalista e autoridade visual. Focada em conversão e otimizada.</p>
+                             </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="../SiteVendas-main/assets/img/Captura de tela_15-12-2025_15239_127.0.0.1.jpeg" alt="Landing Page Customizer Moda">
+                            <div class="slide-content">
+                                <h3>Landing Page de Moda Sob Medida</h3>
+                                <p>Interface elegante focada em conectar clientes a serviços de costura, com CTA claro.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="carousel-indicators">
+                <button class="indicator active"></button>
+                <button class="indicator"></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Soluções Tecnológicas</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #666;">Selecione o serviço desejado para simular o seu investimento.</p>
+
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="abrirAba(event, 'aba-sites')"><i class="fas fa-laptop-code"></i> Criação de Sites</button>
+                <button class="tab-btn" onclick="abrirAba(event, 'aba-social')"><i class="fab fa-instagram"></i> Social Media</button>
+            </div>
+
+            <div id="aba-sites" class="tab-content active">
+                <div class="pricing-container">
+                    <div class="plan-card">
+                        <h3>Site Essencial</h3>
+                        <div class="price">R$ 300<span>/único</span></div>
+                        <p class="plan-desc">Para quem quer apenas estar na internet.</p>
+                        <ul class="features">
+                            <li>Landing Page (Página Única)</li>
+                            <li>Design Responsivo (Mobile)</li>
+                            <li>Link no Google Maps</li>
+                            <li class="disabled">Catálogo de Produtos</li>
+                        </ul>
+                        <button onclick="enviarFixo('Site Essencial', 300)" class="btn-outline">Escolher Essencial</button>
+                    </div>
+
+                    <div class="plan-card popular">
+                        <div class="badge">Recomendado</div>
+                        <h3>Site + Suporte VIP</h3>
+                        <div class="price">R$ 500<span>/único</span></div>
+                        <p class="plan-desc">Para quem não quer se preocupar.</p>
+                        <ul class="features">
+                            <li><strong>Tudo do Plano Essencial</strong></li>
+                            <li>Até 3 Seções de conteúdo</li>
+                            <li>Galeria de Fotos</li>
+                            <li>Manutenção Limitada</li>
+                        </ul>
+                        <button onclick="enviarFixo('Site VIP Suporte', 500)" class="btn-primary" style="width:100%">Quero ser VIP</button>
+                    </div>
+
+                    <div class="plan-card calculator">
+                        <h3>Monte seu Site</h3>
+                        <p class="plan-desc">Adicione apenas o que você precisa.</p>
+                        <form class="calculator-form" onchange="calcularTotalSite()">
+                            <div class="calc-group">
+                                <label>Estrutura Base</label>
+                                <small>Setup + Página Inicial</small>
+                                <div class="fixed-price">R$ 300,00 (Fixo)</div>
+                            </div>
+                            <div class="calc-group">
+                                <label>Páginas Adicionais (+ R$ 50/cada)</label>
+                                <div class="qty-control">
+                                    <button type="button" class="qty-btn" onclick="mudarQtdSite(-1)">-</button>
+                                    <input type="number" id="qtdPaginas" class="qty-input" value="0" readonly>
+                                    <button type="button" class="qty-btn" onclick="mudarQtdSite(1)">+</button>
+                                </div>
+                            </div>
+                            <div class="calc-group">
+                                <label>Catálogo de Produtos</label>
+                                <select id="selectCatalogo">
+                                    <option value="0">Não preciso</option>
+                                    <option value="50">Pequeno (até 10 itens) + R$ 50</option>
+                                    <option value="100">Médio (até 30 itens) + R$ 100</option>
+                                </select>
+                            </div>
+                            <div class="calc-group no-border">
+                                <label>Extras</label>
+                                <div class="checkbox-item"><label><input type="checkbox" class="extra-check-site" value="60" data-name="Galeria de Fotos"> Galeria de Fotos (+60)</label></div>
+                                <div class="checkbox-item"><label><input type="checkbox" class="extra-check-site" value="30" data-name="Botão WhatsApp"> Botão Whats (+30)</label></div>
+                            </div>
+                        </form>
+                        <div class="total-display">
+                            <p>Investimento Estimado:</p>
+                            <h4 id="valorTotalSite">R$ 300</h4>
+                        </div>
+                        <button onclick="enviarPersonalizadoSite()" class="btn-whatsapp" style="width:100%; border:none; cursor:pointer;">Finalizar no WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="aba-social" class="tab-content">
+                <div class="pricing-container" style="justify-content: center;">
+                    <div class="plan-card calculator" style="max-width: 500px; width: 100%;">
+                        <h3>Calculadora de Social Media</h3>
+                        <p class="plan-desc">Monte seu pacote de marketing digital mensal.</p>
+
+                        <form class="calculator-form" onchange="calcularTotalSocial()">
+                            <div class="calc-group">
+                                <label>Estratégia e Planejamento (Mensal)</label>
+                                <small>Organização da pauta, linha editorial e cronograma.</small>
+                                <div class="checkbox-item">
+                                    <label><input type="checkbox" id="checkEstrategia" value="100" data-name="Estratégia e Planejamento"> Adicionar Estratégia (+ R$ 100)</label>
+                                </div>
+                            </div>
+
+                            <div class="calc-group">
+                                <label>Posts Estáticos (Feed/Stories)</label>
+                                <small>Artes profissionais de alta qualidade (+ R$ 10/cada)</small>
+                                <div class="qty-control">
+                                    <button type="button" class="qty-btn" onclick="mudarQtdSocial('posts', -1)">-</button>
+                                    <input type="number" id="qtdPosts" class="qty-input" value="0" readonly>
+                                    <button type="button" class="qty-btn" onclick="mudarQtdSocial('posts', 1)">+</button>
+                                </div>
+                            </div>
+
+                            <div class="calc-group">
+                                <label>Vídeos Curtos (Reels/TikTok)</label>
+                                <small>Edição dinâmica, legendas e tendências (+ R$ 15/cada)</small>
+                                <div class="qty-control">
+                                    <button type="button" class="qty-btn" onclick="mudarQtdSocial('reels', -1)">-</button>
+                                    <input type="number" id="qtdReels" class="qty-input" value="0" readonly>
+                                    <button type="button" class="qty-btn" onclick="mudarQtdSocial('reels', 1)">+</button>
+                                </div>
+                            </div>
+                        </form> <button onclick="enviarPersonalizadoSocial()" class="btn-whatsapp" style="width:100%; border:none; cursor:pointer;">
+                            Solicitar Proposta no Whats
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="sobre" class="section-gray section-padding">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2 class="section-title-left">Quem vai cuidar do seu projeto?</h2>
+                <p>Olá! Sou Guilherme, especialista em tecnologia e marketing digital, atuando aqui em Piracicaba.</p>
+                <p>Decidi usar meu conhecimento para ajudar o comércio local a parar de perder vendas na internet. Seja criando um site super rápido ou gerenciando suas redes sociais com conteúdo que vende.</p>
+                <a href="#contato" class="btn-outline" style="display:inline-block; margin-top:20px;">Falar comigo</a>
+            </div>
+            <div class="about-image">
+                <img src="../SiteVendas-main/assets/img/1000051395.jpg" alt="Foto do Desenvolvedor Guilherme" class="profile-img">
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>Vamos dominar o digital?</h3>
+                <p>Não deixe seu cliente ir para o concorrente.</p>
+                <a href="https://wa.me/5519991650812" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> (55) 19 99165-0812</a>
+                <p>Piracicaba - SP</p>
+            </div>
+            
+            <div class="footer-copy" style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 20px;">
+                <span>&copy; 2026 Guilherme Righi DEV. Todos os direitos reservados.</span>
+            </div>
+            </div>
+    </footer>
+
+    <script src="/SiteVendas-main/assets/js/script.js"></script>
+</body>
+</html>
